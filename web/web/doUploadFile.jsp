@@ -100,6 +100,17 @@
       System.out.println(saveFile + " file uploaded succesfully.</p>");
       Object[] options = { "OK", "CANCEL" };
       int n = JOptionPane.showOptionDialog(null,"Click Ok to go back","Succeeded!",JOptionPane.DEFAULT_OPTION,JOptionPane.WARNING_MESSAGE,null,options,options[0]);
+      if(application.getAttribute("counter")==null){
+        application.setAttribute("counter",1);
+      }
+      else{
+        String num = application.getAttribute("counter").toString();
+        Integer tmp = Integer.valueOf(num);
+
+        tmp++;
+        application.setAttribute("counter",tmp);
+      }
+
     }else {
       String content = request.getContentType();
       System.out.println("<p>file type you choose is not multipart/form-data</p>");
@@ -111,5 +122,9 @@
 
 
 %>
+
+Session: <%=session.getCreationTime()%>
+
+you are NO.:<%=application.getAttribute("counter")%> visitor!
 </body>
 </html>
