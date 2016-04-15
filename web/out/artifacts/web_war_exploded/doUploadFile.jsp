@@ -34,6 +34,7 @@
 
   //get path ont the network
   String realPath = request.getSession().getServletContext().getRealPath("");
+  System.out.println("real path is "+realPath);
   realPath = realPath.substring(0,realPath.lastIndexOf("\\"));
 
   //get local path
@@ -41,6 +42,7 @@
 
   //get input
   String contentType = request.getContentType();
+
   try {
     if (contentType.indexOf("multipart/form-data") >= 0) {
       inStream = new DataInputStream(request.getInputStream());
@@ -101,13 +103,14 @@
       Object[] options = { "OK", "CANCEL" };
       int n = JOptionPane.showOptionDialog(null,"Click Ok to go back","Succeeded!",JOptionPane.DEFAULT_OPTION,JOptionPane.WARNING_MESSAGE,null,options,options[0]);
       if(application.getAttribute("counter")==null){
-        application.setAttribute("counter","1");
+        application.setAttribute("counter",1);
       }
       else{
         String num = application.getAttribute("counter").toString();
         Integer tmp = Integer.valueOf(num);
+
         tmp++;
-        application.setAttribute("counter",tmp.toString());
+        application.setAttribute("counter",tmp);
       }
 
     }else {

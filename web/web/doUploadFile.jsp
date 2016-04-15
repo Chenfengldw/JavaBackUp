@@ -34,6 +34,7 @@
 
   //get path ont the network
   String realPath = request.getSession().getServletContext().getRealPath("");
+  System.out.println("real path is "+realPath);
   realPath = realPath.substring(0,realPath.lastIndexOf("\\"));
 
   //get local path
@@ -41,6 +42,7 @@
 
   //get input
   String contentType = request.getContentType();
+
   try {
     if (contentType.indexOf("multipart/form-data") >= 0) {
       inStream = new DataInputStream(request.getInputStream());
