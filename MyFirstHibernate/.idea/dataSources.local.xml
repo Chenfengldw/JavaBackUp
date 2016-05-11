@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - hellojdbc@localhost" uuid="0468ac6a-03b8-44c0-a20e-acf0865d6e2f">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>hellojdbc.*</schema-pattern>
+      <default-schemas>hellojdbc.*</default-schemas>
+    </data-source>
+  </component>
+</project>
